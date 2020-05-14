@@ -20,10 +20,7 @@ jira_task = '1234'
 #########################################################
 
 exchange = Viewpoint::EWSClient.new(exchange_url, user, pass)
-
-calendar = exchange.get_folder(:calendar)
-events = calendar.items_between(Date.today, Date.today+1).reject(&:cancelled?)
-
+events = exchange.find_items({folder_id: :calendar, calendar_view: {start_date: Date.today, end_date: Date.today+1}}).reject(&:cancelled?)
 puts "Total non-cancelled events in calendar today: #{events.size}"
 return if events.size == 0
 
@@ -50,7 +47,6 @@ while some_merges_happened
   end
 end
 
-work_start = ranges.map(&:start_time).min
 total_minutes = ranges.map(&:length_minutes).sum
 puts "= #{total_minutes} minutes total"
 
