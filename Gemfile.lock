@@ -9,7 +9,6 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     atlassian-jwt (0.2.0)
       jwt (~> 2.1.0)
-    coderay (1.1.2)
     concurrent-ruby (1.1.6)
     httpclient (2.8.3)
     i18n (1.8.2)
@@ -24,17 +23,17 @@ GEM
     logging (2.2.2)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
-    method_source (1.0.0)
-    mini_portile2 (2.4.0)
+    mini_portile2 (2.5.1)
     minitest (5.14.0)
     multi_json (1.14.1)
     multipart-post (2.1.1)
-    nokogiri (1.10.9-x64-mingw32)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.11.5)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    nokogiri (1.11.5-x64-mingw32)
+      racc (~> 1.4)
     oauth (0.5.4)
-    pry (0.13.1)
-      coderay (~> 1.1)
-      method_source (~> 1.0)
+    racc (1.5.2)
     rubyntlm (0.6.2)
     thread_safe (0.3.6)
     tzinfo (1.2.7)
@@ -47,11 +46,11 @@ GEM
     zeitwerk (2.3.0)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
   jira-ruby
-  pry
   viewpoint
 
 RUBY VERSION
